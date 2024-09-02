@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Teaser | SMS Mining Services - Boilermaker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 5px auto;
+            padding: 5px;
+            background-color: #f0f0f0;
+        }
+        .job-teaser {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border: 2px solid #0056b3;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: #0056b3;
+            padding: 10px;
+        }
+        .logo {
+            width: 150px;
+            height: auto;
+            margin-right: 20px;
+        }
+        .title-location {
+            flex-grow: 1;
+        }
+        .job-title {
+            color: white;
+            font-size: 1.4em;
+            font-weight: bold;
+            margin: 0 0 5px 0;
+        }
+        .location {
+            color: #e0e0e0;
+            font-size: 0.9em;
+        }
+        .content {
+            padding: 5px;
+            position: relative;
+            overflow: hidden;
+            min-height: 160px;
+        }
+        .slide {
+            display: none;
+            animation: fadeEffect 0.5s;
+        }
+        .slide.active {
+            display: block;
+        }
+        @keyframes fadeEffect {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        .nav-dots {
+            text-align: center;
+            margin-top: 2px;
+        }
+        .dot {
+            height: 8px;
+            width: 8px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 3px;
+            cursor: pointer;
+        }
+        .dot.active {
+            background-color: #0056b3;
+        }
+        .full-ad-toggle {
+            text-align: right;
+            padding: 2px 5px;
+            background-color: #f0f0f0;
+            font-size: 0.9em;
+        }
+        .full-job-ad {
+            display: none;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-top: 1px solid #ddd;
+            font-size: 0.9em;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .apply-button {
+            display: block;
+            width: 100%;
+            padding: 8px;
+            background-color: #0056b3;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+        .apply-button:hover {
+            background-color: #003d82;
+        }
+        h2 {
+            margin: 5px 0;
+            color: #0056b3;
+            font-size: 1.1em;
+        }
+        ul {
+            margin: 3px 0;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 2px;
+        }
+        p {
+            margin: 3px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="job-teaser">
+        <div class="header">
+            <img src="https://i.imgur.com/3v9keoC.png" alt="SMS Mining Services Logo" class="logo">
+            <div class="title-location">
+                <h1 class="job-title">Boilermaker</h1>
+                <div class="location">📍 Kalgoorlie, WA (FIFO from Perth)</div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="slide active">
+                <h2>Job Overview</h2>
+                <ul>
+                    <li>Join a reputable West Australian mining contractor</li>
+                    <li>10:4 roster with FIFO from Perth</li>
+                    <li>Earn up to $196k plus superannuation</li>
+                    <li>Full-time employment with leave benefits</li>
+                </ul>
+            </div>
+            <div class="slide">
+                <h2>Key Responsibilities</h2>
+                <ul>
+                    <li>Repair or replace mechanical components</li>
+                    <li>Cut, shape, and weld metal products</li>
+                    <li>Assemble parts and structures</li>
+                    <li>Complete bucket and tray refurbishments</li>
+                </ul>
+            </div>
+            <div class="slide">
+                <h2>Requirements</h2>
+                <ul>
+                    <li>2+ years post-apprenticeship experience in mining</li>
+                    <li>Australian Recognised Trade Certificate III - Fabrication</li>
+                    <li>Experience with various welding techniques</li>
+                    <li>Confined Space Ticket</li>
+                </ul>
+            </div>
+            <div class="slide">
+                <h2>Benefits</h2>
+                <ul>
+                    <li>Competitive salary package</li>
+                    <li>Regular rewards and team building activities</li>
+                    <li>Free confidential EAP and wellness services</li>
+                    <li>Opportunity to work with a leading mining contractor</li>
+                </ul>
+            </div>
+        </div>
+        <div class="nav-dots">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+        <div class="full-ad-toggle">
+            <label for="fullAdToggle">Show Full Job Ad</label>
+            <input type="checkbox" id="fullAdToggle" onclick="toggleFullAd()">
+        </div>
+        <div class="full-job-ad" id="fullJobAd">
+            <h2>Full Job Description</h2>
+            <p><strong>About SMS Mining Services:</strong> SMS Mining Services is a privately owned West Australian mining contractor founded in 2000. We have evolved from equipment rental to encompass maintenance, contract mining, and drill and blast divisions. Our mission is to enhance our reputation in the mining industry.</p>
+            
+            <h3>About the Role:</h3>
+            <p>We are seeking an experienced Boilermaker to join our team in Kalgoorlie, WA. This role offers a 10:4 roster with FIFO from Perth and the potential to earn up to $196k plus superannuation.</p>
+
+            <h3>Key Responsibilities:</h3>
+            <ul>
+                <li>Repair or replace malfunctioning or worn mechanical components</li>
+                <li>Cut, shape, mould and heat metal products to fabricate parts</li>
+                <li>Assemble parts and structures by lining up and joining them via welding, bolting or riveting</li>
+                <li>Finish products by cleaning, polishing, filing or bathing them in acid solutions, or by applying protective coatings</li>
+                <li>Complete bucket and tray refurbishments and whole machine rebuild including crack testing and repairs where required</li>
+            </ul>
+
+            <h3>Qualifications and Skills:</h3>
+            <ul>
+                <li>Previous experience working on mobile surface equipment (MEM)</li>
+                <li>At minimum 2 years post graduate qualification /apprenticeship in the mining industry</li>
+                <li>Experience with tray reline and bucket rebuilds</li>
+                <li>Thorough understanding of OEM (Original equipment manufacturer)</li>
+                <li>Demonstrable different working techniques such as flux core, arc, oxy, mig, tig and gouging</li>
+                <li>Australian Recognised Trade Certificate III - Fabrication Trade</li>
+                <li>Confined Space Ticket</li>
+                <li>Ability to pass pre-employment medical</li>
+            </ul>
+
+            <h3>Benefits:</h3>
+            <ul>
+                <li>Competitive salary package with superannuation paid on all hours worked</li>
+                <li>Full-time employment including leave for all of life's planned (annual) and unplanned (personal leave) events</li>
+                <li>Regular rewards and team building activities</li>
+                <li>Free confidential EAP and wellness services available to all SMS Mining Services employees</li>
+            </ul>
+
+            <p><strong>Additional Information:</strong> SMS Mining is an equal opportunity employer. Indigenous, Torres Strait Islander and Female applicants are encouraged to apply. Applicants must be an Australian Citizen or have a permanent residency visa.</p>
+        </div>
+        <a href="https://www.seek.com.au/job/78531381?ref=search-standalone&type=standout&origin=jobTitle#sol=40c1e946f2842c9d42f3009338723e6d0ae4cfce" class="apply-button" target="_blank">Apply Now</a>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");  
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            }
+            slides[slideIndex-1].classList.add("active");  
+            dots[slideIndex-1].classList.add("active");
+        }
+
+        function toggleFullAd() {
+            const fullJobAd = document.getElementById("fullJobAd");
+            const checkbox = document.getElementById("fullAdToggle");
+            fullJobAd.style.display = checkbox.checked ? "block" : "none";
+        }
+
+        // Auto-slide functionality
+        setInterval(() => {
+            plusSlides(1);
+        }, 5000); // Change slide every 5 seconds
+    </script>
+</body>
+</html>
